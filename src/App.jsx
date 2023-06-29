@@ -2,15 +2,18 @@ import React from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import NuevoContacto from "./components/NuevoContacto"
 import ListaDeContactos from "./components/ListaDeContacto"
+import { Footer } from "./components/Footer"
 
 export default function App() {
-  return(
+  return (
     <React.StrictMode>
       <Router>
         <Routes>
-          <Route path="/" element={<NuevoContacto/>} />
-          <Route path="ListaDeContactos" element={<ListaDeContactos/>}/>
+          <Route path="/nuevoContacto" element={<NuevoContacto />} />
+          <Route path="/editarContacto/:id" element={<NuevoContacto />} />
+          <Route path="/" element={<ListaDeContactos />} />
         </Routes>
+        <Footer/>
       </Router>
     </React.StrictMode>
 
