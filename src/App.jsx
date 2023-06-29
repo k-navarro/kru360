@@ -13,7 +13,9 @@ export default function App() {
           <Route path="/editarContacto/:id" element={<NuevoContacto />} />
           <Route path="/" element={<ListaDeContactos />} />
         </Routes>
-        <Footer/>
+        <div className="pt-20">
+          <Footer/>
+        </div>
       </Router>
     </React.StrictMode>
 

@@ -146,7 +146,7 @@ const NuevoContacto = () => {
                             value={usuario.origen}
                         >
                             <option value="" hidden> Origen</option>
-                            <option value="cliente">Cliente</option>
+                            <option value="cliente">Landing page</option>
                             <option value="admin">Administrativo</option>
                         </select>
                     </form>

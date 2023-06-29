@@ -5,7 +5,7 @@ import MessageIcon from '@mui/icons-material/Message';
 
 export const Footer = () => {
     return (
-        <footer className=" w-full flex justify-center pb-7 bg-primario absolute bottom-0 rounded-t-3xl text-white">
+        <footer className=" w-full flex justify-center pb-7 bg-primario fixed bottom-0 rounded-t-3xl text-white">
             <div className='flex flex-col items-center  border-secundario border-t-8'>
                 <PersonIcon sx={{ color: '#ffffff' }} />
                 Contactos

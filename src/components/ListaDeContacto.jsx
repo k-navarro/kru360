@@ -17,6 +17,7 @@ const ListaDeContactos = () => {
   const navigate = useNavigate()
 
   const open = Boolean(anchorEl);
+  const URL ="http://localhost:8080"
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -34,7 +35,7 @@ const ListaDeContactos = () => {
 
   const obtenerUsuarios = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/usuarios`)
+      const response = await axios.get(`${URL}/usuarios`)
       return response.data
     } catch (e) {
 
@@ -43,7 +44,7 @@ const ListaDeContactos = () => {
 
   const eliminarUsuario = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/usuario/${id}`)
+      await axios.delete(`${URL}/usuario/${id}`)
       obtenerUsuarios().then(response => {
         setUsuarios(response)
         setUsuariosFiltrados(response)
