@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom'
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddTaskIcon from '@mui/icons-material/AddTask';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import SearchIcon from '@mui/icons-material/Search';
 
 const ListaDeContactos = () => {
   const [nombreUsuario, setNombreUsuario] = useState('')
@@ -75,13 +77,18 @@ const ListaDeContactos = () => {
 
   return (
     <div className=" w-full px-8 flex flex-col items-center align-center  ">
-      <input
-        type="text"
-        value={nombreUsuario}
-        placeholder='Buscar'
-        className=' w-full mt-3 p-3 border rounded-full bg-fondo my-4'
-        onChange={(evento) => setNombreUsuario(evento.target.value)}
-      />
+      <div class="relative w-full">
+        <input
+          type="text"
+          class="w-full mt-3 p-3 px-5 border rounded-full bg-fondo my-4 "
+          placeholder="Buscar"
+          value={nombreUsuario}
+          onChange={(evento) => setNombreUsuario(evento.target.value)}
+        />
+        <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+          <SearchIcon  sx={{ color: '#006192' }} />
+        </div>
+      </div>
       <div className='w-full'>
         <h1 className='text-primario text-md font-bold mb-2	'>Lista de contactos</h1>
         <div className=' w-full bg-fondo rounded-3xl'>
@@ -131,7 +138,11 @@ const ListaDeContactos = () => {
           }
         </div>
       </div>
-      <button onClick={() => navigate('/nuevoContacto')} className='bg-primario mb-5 w-40 py-2 text-white uppercase rounded-full mt-5'>Agregar</button>
+
+      <button onClick={() => navigate('/nuevoContacto')} className='bg-primario mb-5 w-40 py-2 text-white uppercase rounded-full mt-5 items-center'>
+        Agregar
+        <PersonAddAltIcon className='ml-3' />
+      </button>
     </div>
 
   )
