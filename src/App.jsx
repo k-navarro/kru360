@@ -7,17 +7,21 @@ import { Footer } from "./components/Footer"
 export default function App() {
   return (
     <React.StrictMode>
-      <Router>
-        <Routes>
-          <Route path="/nuevoContacto" element={<NuevoContacto />} />
-          <Route path="/editarContacto/:id" element={<NuevoContacto />} />
-          <Route path="/" element={<ListaDeContactos />} />
-        </Routes>
-        <div className="pt-20">
-          <Footer/>
+      <>
+        <div className="w-full max-w-[600px] m-auto flex flex-col justify-center items-center">
+          <Router>
+            <Routes>
+              <Route path="/nuevoContacto" element={<NuevoContacto />} />
+              <Route path="/editarContacto/:id" element={<NuevoContacto />} />
+              <Route path="/" element={<ListaDeContactos />} />
+            </Routes>
+          </Router>
         </div>
-      </Router>
-    </React.StrictMode>
+        <div className="w-full pt-20">
+          <Footer />
+        </div>
+      </>
+    </React.StrictMode >
 
   )
 }

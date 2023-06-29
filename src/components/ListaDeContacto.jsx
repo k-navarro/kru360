@@ -17,7 +17,7 @@ const ListaDeContactos = () => {
   const navigate = useNavigate()
 
   const open = Boolean(anchorEl);
-  const URL ="http://localhost:8080"
+  const URL = "http://localhost:8080"
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -67,22 +67,22 @@ const ListaDeContactos = () => {
   useEffect(() => {
     if (nombreUsuario.length) {
       filtradoUsuarios(nombreUsuario)
-    } 
-    if(!nombreUsuario.length){
+    }
+    if (!nombreUsuario.length) {
       setUsuariosFiltrados(usuarios)
     }
   }, [nombreUsuario])
 
   return (
-    <div className="flex flex-col items-center align-center  ">
+    <div className=" w-full px-8 flex flex-col items-center align-center  ">
       <input
         type="text"
         value={nombreUsuario}
         placeholder='Buscar'
-        className=' w-11/12 mt-3 p-3 border rounded-full bg-fondo my-4'
+        className=' w-full mt-3 p-3 border rounded-full bg-fondo my-4'
         onChange={(evento) => setNombreUsuario(evento.target.value)}
       />
-      <div className='w-11/12'>
+      <div className='w-full'>
         <h1 className='text-primario text-md font-bold mb-2	'>Lista de contactos</h1>
         <div className=' w-full bg-fondo rounded-3xl'>
           {
@@ -129,11 +129,9 @@ const ListaDeContactos = () => {
               </div>
             ))
           }
-
         </div>
       </div>
       <button onClick={() => navigate('/nuevoContacto')} className='bg-primario mb-5 w-40 py-2 text-white uppercase rounded-full mt-5'>Agregar</button>
-
     </div>
 
   )
