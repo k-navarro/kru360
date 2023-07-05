@@ -86,7 +86,7 @@ const ListaDeContactos = () => {
           onChange={(evento) => setNombreUsuario(evento.target.value)}
         />
         <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-          <SearchIcon  sx={{ color: '#006192' }} />
+          <SearchIcon sx={{ color: '#006192' }} />
         </div>
       </div>
       <div className='w-full'>
