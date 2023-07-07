@@ -39,7 +39,7 @@ const NuevoContacto = () => {
 
     const obtenerUsuarioPorId = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/usuarios/${params?.id}`)
+            const response = await axios.get(`http://localhost:8080/usuario/${params?.id}`)
             return response.data
         } catch (e) {
 
@@ -48,10 +48,10 @@ const NuevoContacto = () => {
 
     const crearContacto = async () => {
         try {
-            await axios.post('http://localhost:8080/usuario', usuario)
+            await axios.post('http://localhost:8080/usuario',usuario)
             navigate('/')
         } catch (e) {
-
+            console.log("error en el post ", e)
         }
     }
 
